@@ -5,11 +5,12 @@ export default function Repositories() {
 
     const [respositories, setRepositories] = useState([]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect( async () => {
-        const response = await fetch('https://api.github.com/users/vinicius-maker/repos')
-        const data = await response.json();
-        setRepositories(data)
+    useEffect(() => {
+        (async function name() {
+            const response = await fetch('https://api.github.com/users/vinicius-maker/repos')
+            const data = await response.json();
+            setRepositories(data)
+        })();
     }, []);
 
     useEffect(() => {
